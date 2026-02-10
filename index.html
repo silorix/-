@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثابت بن قرة - العالم العباسي الشامل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset وإعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #0d47a1;
+            --accent-color: #4fc3f7;
+            --dark-bg: #0a0e2a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-color: #f0f0f0;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #151a38 50%, #1c2345 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* تصميم القائمة الهامبرغر */
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .hamburger-menu:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 4px 0;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* القائمة الجانبية */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 320px;
+            height: 100vh;
+            background: rgba(10, 14, 42, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 999;
+            overflow-y: auto;
+            transition: var(--transition);
+            padding: 80px 20px 30px;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+            border-left: 1px solid rgba(79, 195, 247, 0.1);
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-menu::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .side-menu::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+        }
+
+        .menu-header h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-item {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            background: rgba(79, 195, 247, 0.1);
+            border-color: rgba(79, 195, 247, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .menu-item i {
+            margin-left: 8px;
+            color: var(--accent-color);
+        }
+
+        /* تصميم العنوان الرئيسي */
+        .main-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* تصميم الكروت الزجاجية */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(79, 195, 247, 0.3);
+            font-size: 2rem;
+        }
+
+        /* الأقسام والصفحات */
+        .page-section {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* الصفحة الرئيسية */
+        .intro-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .link-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .link-card:hover {
+            background: rgba(79, 195, 247, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .link-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .link-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* تنسيق النصوص والمحتوى */
+        .content-paragraph {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .subsection-title {
+            color: var(--accent-color);
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .highlight {
+            background: rgba(79, 195, 247, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        ul, ol {
+            padding-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* التصميم المتجاوب */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .glass-card {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .link-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .side-menu {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .content-paragraph {
+                font-size: 1rem;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .page-indicator {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 98;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .indicator-dot.active {
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .indicator-dot:hover::after {
+            content: attr(data-section);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+        }
+
+        /* إخفاء المؤشر على الشاشات الصغيرة */
+        @media (max-width: 1100px) {
+            .page-indicator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- زر القائمة الهامبرغر -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- القائمة الجانبية -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <h3>ثابت بن قرة</h3>
+            <p>العالم الموسوعي العباسي</p>
+        </div>
+        <div class="menu-items">
+            <a href="#home" class="menu-item active" data-section="home"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+            <a href="#personality" class="menu-item" data-section="personality"><i class="fas fa-user"></i> الشخصية</a>
+            <a href="#works" class="menu-item" data-section="works"><i class="fas fa-flask"></i> الأعمال العلمية</a>
+            <a href="#math" class="menu-item" data-section="math"><i class="fas fa-square-root-alt"></i> الرياضيات</a>
+            <a href="#astronomy" class="menu-item" data-section="astronomy"><i class="fas fa-star"></i> علم الفلك</a>
+            <a href="#mechanics" class="menu-item" data-section="mechanics"><i class="fas fa-cogs"></i> الهندسة والميكانيكا</a>
+            <a href="#methodology" class="menu-item" data-section="methodology"><i class="fas fa-book"></i> المنهج العلمي</a>
+            <a href="#project" class="menu-item" data-section="project"><i class="fas fa-info-circle"></i> المشروع</a>
+        </div>
+    </nav>
+
+    <!-- مؤشر الصفحات -->
+    <div class="page-indicator" id="pageIndicator">
+        <div class="indicator-dot active" data-section="الرئيسية" data-target="home"></div>
+        <div class="indicator-dot" data-section="الشخصية" data-target="personality"></div>
+        <div class="indicator-dot" data-section="الأعمال العلمية" data-target="works"></div>
+        <div class="indicator-dot" data-section="الرياضيات" data-target="math"></div>
+        <div class="indicator-dot" data-section="علم الفلك" data-target="astronomy"></div>
+        <div class="indicator-dot" data-section="الهندسة" data-target="mechanics"></div>
+        <div class="indicator-dot" data-section="المنهج العلمي" data-target="methodology"></div>
+        <div class="indicator-dot" data-section="المشروع" data-target="project"></div>
+    </div>
+
+    <!-- زر العودة للأعلى -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- الأقسام الرئيسية -->
+    <main id="mainContent">
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="page-section active">
+            <div class="main-header">
+                <h1 class="main-title">ثابت بن قرة: العالم الموسوعي العباسي</h1>
+                <p class="subtitle">موقع تفاعلي شامل يعرض حياة وإنجازات أحد أبرز علماء العصر الذهبي للحضارة الإسلامية</p>
+            </div>
+
+            <div class="glass-card">
+                <h2 class="section-title">مقدمة المشروع</h2>
+                <div class="intro-content">
+                    <p class="content-paragraph">
+                        يُعد ثابت بن قرة (826-901م) أحد أبرز علماء العصر العباسي الذهبي، حيث مثّل نموذجاً فريداً للعالم الموسوعي الذي أبدع في حقول علمية متعددة. 
+                        ولد في حران شمال العراق، وعاش في زمن ازدهار حركة الترجمة والبحث العلمي في بيت الحكمة ببغداد. 
+                        يجسد ثابت بن قرة النموذج الأمثل للعالم الموسوعي الذي تجاوز حدود التخصص الضيق، حيث ترك إرثاً علمياً غنياً في الرياضيات والفلك والطب والفلسفة والميكانيكا.
+                    </p>
+                    <p class="content-paragraph">
+                        يهدف هذا الموقع إلى تقديم صورة شاملة عن حياة وإنجازات ثابت بن قرة، مع التركيز على المنهجية العلمية التي اتبعها وأثرها في تطور العلوم في الحضارة الإسلامية والعالمية. 
+                        سيتناول الموقع شخصيته الفريدة، إنجازاته المتعددة في العلوم، وأهم نظرياته وابتكاراته التي لا تزال محل إعجاب ودراسة حتى يومنا هذا.
+                    </p>
+                    <div class="highlight">
+                        <h3 class="subsection-title">الهدف من الموقع</h3>
+                        <p>يهدف هذا المشروع التعليمي إلى:</p>
+                        <ul>
+                            <li>تقديم نظرة شاملة عن حياة وإنجازات ثابت بن قرة</li>
+                            <li>تسليط الضوء على المنهجية العلمية التي اتبعها في أبحاثه</li>
+                            <li>عرض مساهماته في تطور العلوم الرياضية والفلكية والهندسية</li>
+                            <li>بيان أثر أعماله على التطور العلمي اللاحق في العالمين الإسلامي والأوروبي</li>
+                            <li>تشجيع الاهتمام بالتراث العلمي للحضارة العربية الإسلامية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="section-title">استكشف الأقسام</h2>
+                <div class="link-cards">
+                    <a href="#personality" class="link-card" data-section="personality">
+                        <i class="fas fa-user"></i>
+                        <h3>الشخصية</h3>
+                        <p>حياة ثابت بن قرة وسياقه التاريخي وصفاته الشخصية</p>
+                    </a>
+                    <a href="#works" class="link-card" data-section="works">
+                        <i class="fas fa-flask"></i>
+                        <h3>الأعمال العلمية</h3>
+                        <p>إنجازاته العلمية وأثرها على التطور العلمي</p>
+                    </a>
+                    <a href="#math" class="link-card" data-section="math">
+                        <i class="fas fa-square-root-alt"></i>
+                        <h3>الرياضيات</h3>
+                        <p>برهانه الرياضي ونظرية الأعداد والهندسة التطبيقية</p>
+                    </a>
+                    <a href="#astronomy" class="link-card" data-section="astronomy">
+                        <i class="fas fa-star"></i>
+                        <h3>علم الفلك</h3>
+                        <p>دراسة حركة الأجرام السماوية وتقويم النجوم</p>
+                    </a>
+                </div>
+                <div class="link-cards">
+                    <a href="#mechanics" class="link-card" data-section="mechanics">
+                        <i class="fas fa-cogs"></i>
+                        <h3>الهندسة والميكانيكا</h3>
+                        <p>النماذج الميكانيكية وتحليل المباني والمبادئ الهندسية</p>
+                    </a>
+                    <a href="#methodology" class="link-card" data-section="methodology">
+                        <i class="fas fa-book"></i>
+                        <h3>المنهج العلمي</h3>
+                        <p>التحليل المنهجي والتطبيق العملي والابتكار العلمي</p>
+                    </a>
+                    <a href="#project" class="link-card" data-section="project">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>المشروع</h3>
+                        <p>معلومات عن إعداد المشروع واللغات المستخدمة</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الشخصية -->
+        <section id="personality" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">الشخصية: ثابت بن قرة</h2>
+                
+                <h3 class="subsection-title">النشأة والخلفية التاريخية</h3>
+                <p class="content-paragraph">
+                    وُلِد ثابت بن قرة بن مروان في حران عام 826م (212 هـ)، وهي مدينة تاريخية تقع في شمال بلاد الرافدين (جنوب تركيا حالياً). 
+                    تنتمي حران إلى منطقة تاريخية عريقة كانت مركزاً للحضارات القديمة ومهداً للعلوم والمعارف. 
+                    نشأ ثابت في بيئة ثقافية غنية، حيث كانت حران معقلاً للصابئة الحرانيين الذين اشتهروا باهتمامهم بالعلوم الفلكية والرياضية والفلسفية.
+                </p>
+                <p class="content-paragraph">
+                    ينتمي ثابت بن قرة إلى طائفة الصابئة الحرانيين، وهي جماعة دينية وثقافية احتفظت بالتراث الهلنستي ومارست العبادة الكوكبية. 
+                    تميزت هذه الطائفة باهتمامها العميق بالعلوم الرياضية والفلكية، مما أتاح لثابت فرصة النشوء في بيئة علمية خصبة.
+                </p>
+                
+                <h3 class="subsection-title">السياق التاريخي في العصر العباسي</h3>
+                <p class="content-paragraph">
+                    عاش ثابت بن قرة خلال العصر الذهبي للحضارة الإسلامية، تحديداً في عهد الخلافة العباسية. 
+                    شهد هذا العصر ازدهاراً غير مسبوق في حركة الترجمة والبحث العلمي، خاصة في عهد الخليفة المأمون الذي أسس "بيت الحكمة" في بغداد. 
+                    كان بيت الحكمة مركزاً علمياً ضخماً جمع بين وظيفة المكتبة ومركز الترجمة والمعهد العلمي والمرصد الفلكي.
+                </p>
+                <p class="content-paragraph">
+                    تميز العصر العباسي بسياسة الانفتاح الثقافي والتسامح الديني النسبي، مما سمح لعلماء من خلفيات دينية وعرقية مختلفة بالمساهمة في الحركة العلمية. 
+                    في هذا الجو العلمي المزدهر، استطاع ثابت بن قرة أن يبرز كواحد من ألمع العقول العلمية في عصره.
+                </p>
+                
+                <h3 class="subsection-title">الرحيل إلى بغداد والتتلمذ على يد بني موسى</h3>
+                <p class="content-paragraph">
+                    انتقل ثابت بن قرة من حران إلى بغداد، عاصمة الخلافة العباسية ومركز العلم والمعرفة في العالم الإسلامي آنذاك. 
+                    في بغداد، لفت انتباه إخوة بني موسى (محمد وأحمد والحسن أبناء موسى بن شاكر)، الذين كانوا علماء بارزين ومقربين من بلاط الخليفة المأمون.
+                </p>
+                <p class="content-paragraph">
+                    تكفل بنو موسى بثابت وأشركوه في أعمالهم العلمية، لا سيما في مشروع الترجمة والبحث في بيت الحكمة. 
+                    تحت رعايتهم، تمكن ثابت من تطوير مهاراته العلمية واللغوية، حيث أتقن اللغات السريانية واليونانية والعربية، مما أهله للقيام بأعمال ترجمة دقيقة للنصوص العلمية اليونانية.
+                </p>
+                
+                <h3 class="subsection-title">الصفات الشخصية والعلمية</h3>
+                <p class="content-paragraph">
+                    تميز ثابت بن قرة بعدة صفات شخصية وعلمية ساهمت في نجاحه وإبداعه:
+                </p>
+                <ul>
+                    <li><strong>الذكاء الحاد والفضول العلمي:</strong> امتلك ذكاءً استثنائياً وفضولاً علمياً غير محدود، دفعه إلى استكشاف مجالات علمية متعددة.</li>
+                    <li><strong>الدقة والمنهجية:</strong> اتبع منهجية دقيقة في بحثه العلمي، معتمداً على البرهان الرياضي والتجربة العملية.</li>
+                    <li><strong>الاجتهاد والمثابرة:</strong> عُرف بعمله الدؤوب واجتهاده المستمر في البحث والدراسة.</li>
+                    <li><strong>التواضع العلمي:</strong> على الرغم من مكانته العلمية المرموقة، كان متواضعاً ومنفتحاً على النقاش العلمي.</li>
+                    <li><strong>التعددية العلمية:</strong> لم يقتصر على مجال علمي واحد، بل برع في عدة تخصصات متداخلة.</li>
+                </ul>
+                
+                <h3 class="subsection-title">الإسهامات اللغوية والترجمة</h3>
+                <p class="content-paragraph">
+                    بالإضافة إلى إسهاماته العلمية، كان لثابت بن قرة دور بارز في حركة الترجمة. 
+                    بفضل إتقانه للغات السريانية واليونانية والعربية، قام بترجمة العديد من الأعمال العلمية والفلسفية اليونانية إلى العربية. 
+                    من أبرز الترجمات التي أنجزها أعمال أرخميدس وأبولونيوس وإقليدس وثيودوسيوس وبطليموس.
+                </p>
+                <p class="content-paragraph">
+                    لم تكن ترجمات ثابت مجرد نقل حرفي للنصوص، بل كانت ترجمات نقدية شارحاً ومصححاً للأخطاء التي وجدها في النصوص الأصلية. 
+                    كما ساهم في تطوير المصطلحات العلمية العربية، مما ساعد على إثراء اللغة العربية بمفاهيم علمية دقيقة.
+                </p>
+                
+                <h3 class="subsection-title">الوفاة والإرث العلمي</h3>
+                <p class="content-paragraph">
+                    توفي ثابت بن قرة في بغداد عام 901م (288 هـ) عن عمر يناهز 75 عاماً. 
+                    ترك وراءه إرثاً علمياً ضخماً شمل مئات المؤلفات والرسائل العلمية في شتى المجالات.
+                </p>
+                <p class="content-paragraph">
+                    استمر تأثير أعمال ثابت بن قرة لقرون طويلة، حيث انتقلت مؤلفاته إلى أوروبا عبر الترجمة اللاتينية في العصور الوسطى، 
+                    وكان لها تأثير كبير على تطور العلوم الرياضية والفلكية في عصر النهضة الأوروبية. 
+                    يعد ثابت بن قرة نموذجاً ملهماً للعالم الموسوعي الذي يجمع بين العمق في التخصص والاتساع في المعرفة.
+                </p>
+            </div>
+        </section>
+
+        <!-- قسم الأعمال العلمية -->
+        <section id="works" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">الأعمال العلمية</h2>
+                
+                <h3 class="subsection-title">المؤلفات والرسائل العلمية</h3>
+                <p class="content-paragraph">
+                    ترك ثابت بن قرة إرثاً علمياً غنياً يتضمن عشرات المؤلفات والرسائل العلمية التي غطت مجالات متنوعة. 
+                    تشير المصادر التاريخية إلى أنه ألف أكثر من 150 كتاباً ورسالة في الرياضيات والفلك والطب والموسيقى والفلسفة. 
+                    للأسف، لم يصلنا سوى جزء من هذه المؤلفات، لكن التي وصلتنا تكفي لإظهار عبقريته وعمق معرفته.
+                </p>
+                
+                <h3 class="subsection-title">الترجمات العلمية الدقيقة</h3>
+                <p class="content-paragraph">
+                    قام ثابت بن قرة بترجمة العديد من الأعمال العلمية اليونانية إلى العربية، مع إضافات وتعليقات نقدية تظهر فهمه العميق للموضوع. 
+                    من أهم الترجمات التي أنجزها:
+                </p>
+                <ul>
+                    <li><strong>أعمال أرخميدس:</strong> ترجم أعمال أرخميدس الرياضية بما فيها "كتاب الكرة والأسطوانة" و"قياس الدائرة".</li>
+                    <li><strong>أصول إقليدس:</strong> قام بترجمة كتاب "الأصول" لإقليدس مع إضافات وتعليقات مهمة.</li>
+                    <li><strong>أعمال أبولونيوس:</strong> ترجز كتاب "المخروطات" لأبولونيوس البرغاوي.</li>
+                    <li><strong>المجسطي لبطليموس:</strong> ساهم في ترجمة وتصحيح هذا العمل الفلكي الضخم.</li>
+                </ul>
+                
+                <h3 class="subsection-title">الإسهامات في الرياضيات</h3>
+                <p class="content-paragraph">
+                    كان لثابت بن قرة إسهامات جوهرية في تطور الرياضيات، منها:
+                </p>
+                <ul>
+                    <li><strong>نظرية الأعداد:</strong> طور مفاهيم جديدة في نظرية الأعداد، بما في ذلك دراسة الأعداد المتحابة والأعداد التامة.</li>
+                    <li><strong>الهندسة:</strong> قدم براهين جديدة وتحسينات على نظريات إقليدس وأرخميدس.</li>
+                    <li><strong>الجبر:</strong> ساهم في تطوير المعادلات الجبرية وطرق حلها.</li>
+                    <li><strong>حساب المثلثات:</strong> طور مفاهيم حساب المثلثات وطبقها في حل المسائل الفلكية.</li>
+                </ul>
+                
+                <h3 class="subsection-title">الإسهامات في علم الفلك</h3>
+                <p class="content-paragraph">
+                    في مجال الفلك، قدم ثابت بن قرة إسهامات مهمة منها:
+                </p>
+                <ul>
+                    <li><strong>حركة الأجرام السماوية:</strong> درس حركة الكواكب والشمس والقمر وأجرام السماء.</li>
+                    <li><strong>التقويم الفلكي:</strong> وضع حسابات دقيقة للتقويم الشمسي والقمري.</li>
+                    <li><strong>المراصد الفلكية:</strong> ساهم في إنشاء وتطوير المراصد الفلكية وأدوات الرصد.</li>
+                    <li><strong>النظرية الكوكبية:</strong> قدم تحسينات على نموذج بطليموس لحركة الكواكب.</li>
+                </ul>
+                
+                <h3 class="subsection-title">الإسهامات في الطب</h3>
+                <p class="content-paragraph">
+                    على الرغم من أن شهرة ثابت بن قرة تأتي principalmente من إسهاماته الرياضية والفلكية، إلا أن له إسهامات مهمة في الطب أيضًا:
+                </p>
+                <ul>
+                    <li><strong>الطب النظري:</strong> كتب في الطب النظري وتأثر بأفكار جالينوس وأبقراط.</li>
+                    <li><strong>الصيدلة:</strong> ألف كتاباً في الأدوية المفردة وخصائصها.</li>
+                    <li><strong>التشريح:</strong> درس التشريح ووظائف الأعضاء بناءً على التراث الطبي اليوناني.</li>
+                </ul>
+                
+                <h3 class="subsection-title">الإسهامات في الفلسفة والمنطق</h3>
+                <p class="content-paragraph">
+                    كان لثابت بن قرة اهتمام بالفلسفة والمنطق، حيث:
+                </p>
+                <ul>
+                    <li><strong>الفلسفة الطبيعية:</strong> كتب في الفلسفة الطبيعية وتأثر بأفكار أرسطو وأفلاطون.</li>
+                    <li><strong>المنطق:</strong> طور أفكاراً في المنطق الصوري وتطبيقاته في البرهان العلمي.</li>
+                    <li><strong>فلسفة العلوم:</strong> ناقش قضايا منهجية في البحث العلمي وطبيعة المعرفة.</li>
+                </ul>
+                
+                <h3 class="subsection-title">أثر أعماله على التطور العلمي اللاحق</h3>
+                <p class="content-paragraph">
+                    كان لأعمال ثابت بن قرة تأثير عميق على التطور العلمي اللاحق:
+                </p>
+                <ul>
+                    <li><strong>في العالم الإسلامي:</strong> أصبحت أعماله مرجعاً أساسياً للعلماء المسلمين اللاحقين مثل البيروني وابن الهيثم والخوارزمي.</li>
+                    <li><strong>في أوروبا:</strong> انتقلت أعماله إلى أوروبا عبر الترجمة اللاتينية في القرن الثاني عشر، وأثرت على علماء مثل فيبوناتشي وجيرارد الكريموني.</li>
+                    <li><strong>في عصر النهضة:</strong> كانت أعماله مصدر إلهام لعلماء عصر النهضة الأوروبية الذين بنوا عليها في تطور العلوم الحديثة.</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">أهمية أعمال ثابت بن قرة</h3>
+                    <p class="content-paragraph">
+                        تكمن أهمية أعمال ثابت بن قرة في أنها مثلت جسراً بين التراث العلمي اليوناني والعلم العربي الإسلامي، 
+                        ثم بين العلم الإسلامي والعلم الأوروبي في العصور الوسطى وعصر النهضة. 
+                        لم يكن ثابت مجرد ناقل للمعارف، بل كان مبدعاً ومحسناً للنظريات العلمية التي ترجمها وشرحها.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الرياضيات -->
+        <section id="math" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">الرياضيات</h2>
+                
+                <h3 class="subsection-title">البرهان الرياضي عند ثابت بن قرة</h3>
+                <p class="content-paragraph">
+                    تميز ثابت بن قرة بمنهجية دقيقة في البرهان الرياضي، حيث أعاد صياغة العديد من براهين إقليدس وأرخميدس بأسلوب أكثر وضوحاً ودقة. 
+                    اهتم بالبرهان بالخلف (البرهان بالتناقض) والبرهان الهندسي التحليلي، مع التركيز على الأسس المنطقية للرياضيات.
+                </p>
+                <p class="content-paragraph">
+                    في كتابه "في البرهان"، ناقش ثابت أنواع البراهين الرياضية وشروط صحتها، مؤكداً على ضرورة البدء من مسلمات واضحة واتباع خطوات استدلالية صارمة. 
+                    كان يؤمن بأن الرياضيات هي اللغة الأم للعلوم الطبيعية، وأن الدقة الرياضية شرط أساسي للمعرفة العلمية الموثوقة.
+                </p>
+                
+                <h3 class="subsection-title">نظرية الأعداد</h3>
+                <p class="content-paragraph">
+                    كان لثابت بن قرة إسهامات رائدة في نظرية الأعداد، حيث طور نظرية الأعداد المتحابة (الأعداد الصديقة). 
+                    الأعداد المتحابة هي أزواج من الأعداد حيث يكون مجموع قواسم كل عدد (بدون العدد نفسه) مساوياً للعدد الآخر. 
+                   
+                </p>
+                <ul>
+                    <li>                <h3 class="subsection-title">نظرية الأعداد</h3>
+                <p class="content-paragraph">
+                    كان لثابت بن قرة إسهامات رائدة في نظرية الأعداد، حيث طور نظرية الأعداد المتحابة (الأعداد الصديقة). 
+                    الأعداد المتحابة هي أزواج من الأعداد حيث يكون مجموع قواسم كل عدد (بدون العدد نفسه) مساوياً للعدد الآخر. 
+                </p>
+                <u</li>
+                                 </ul>
+                <p class="content-paragraph">
+                    طور ثابت بن قرة قاعدة عامة لإيجاد الأعداد المتحابة،                 </p>
+                
+                <h3 class="subsection-title">الهندسة التطبيقية</h3>
+                <p class="content-paragraph">
+                    في مجال الهندسة، قدم ثابت بن قرة إسهامات مهمة في حل المسائل الهندسية التطبيقية. 
+                    أعاد صياغة براهين إقليدس وأرخميدس، وقدم حلولاً جديدة لمسائل تتعلق بحساب المساحات والأحجام.
+                </p>
+                <p class="content-paragraph">
+                    من أهم إسهاماته في الهندسة:
+                </p>
+                <ul>
+                    <li><strong>تطوير نظريات إقليدس:</strong> قدم تحسينات وتوضيحات لنظريات إقليدس في "الأصول"</li>
+                    <li><strong>حساب المساحات:</strong> طور طرقاً لحساب مساحات الأشكال الهندسية المعقدة</li>
+                    <li><strong>الهندسة التحليلية:</strong> مهد الطريق لتطوير الهندسة التحليلية من خلال ربط الهندسة بالجبر</li>
+                    <li><strong>المقاطع المخروطية:</strong> درس خصائص القطع الناقص والقطع المكافئ والقطع الزائد</li>
+                </ul>
+                
+                <h3 class="subsection-title">حساب المثلثات</h3>
+                <p class="content-paragraph">
+                    ساهم ثابت بن قرة في تطوير حساب المثلثات، خاصة في سياق تطبيقاته الفلكية. 
+                    طور جداول دقيقة للجيب وجيب التمام، واستخدمها في حل المسائل الفلكية المتعلقة بحركة الكواكب والأجرام السماوية.
+                </p>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">أهم إسهاماته الرياضية</h3>
+                    <ul>
+                        <li>نظرية الأعداد المتحابة وقاعدة ثابت للأعداد المتحابة</li>
+                        <li>تحسين وتطوير براهين إقليدس وأرخميدس</li>
+                        <li>تطوير حساب المثلثات وتطبيقاته الفلكية</li>
+                        <li>دراسة المقاطع المخروطية وخصائصها</li>
+                        <li>حل المسائل الهندسية المتعلقة بالمساحات والأحجام</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم علم الفلك -->
+        <section id="astronomy" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">علم الفلك</h2>
+                
+                <h3 class="subsection-title">دراسة حركة الأجرام السماوية</h3>
+                <p class="content-paragraph">
+                    كان لعلم الفلك مكانة خاصة في أعمال ثابت بن قرة، حيث قدم إسهامات جوهرية في فهم حركة الأجرام السماوية. 
+                    درس بعمق حركة الشمس والقمر والكواكب، وحاول تقديم نماذج رياضية دقيقة لوصف هذه الحركات.
+                </p>
+                <p class="content-paragraph">
+                    من أهم إنجازاته الفلكية تطويره لنموذج حركة الشمس، حيث قدم تصحيحاً مهماً لنموذج بطليموس. 
+                    بين ثابت أن حركة الشمس ليست منتظمة كما كان يُعتقد، بل تتغير سرعتها خلال مدارها الظاهري حول الأرض.
+                </p>
+                
+                <h3 class="subsection-title">تقويم النجوم والأبراج</h3>
+                <p class="content-paragraph">
+                    طور ثابت بن قرة تقويماً فلكياً دقيقاً اعتمد على دراسة دورة النجوم والأبراج. 
+                    قدم حسابات دقيقة لمواقع النجوم وحركتها، وساهم في تطوير علم التنجيم العلمي الذي كان سائداً في عصره.
+                </p>
+                <p class="content-paragraph">
+                    في كتابه "في حركة النجوم الثابتة"، قدم ثابت دراسة مفصلة لحركة الاعتدالين وانحراف فلك البروج. 
+                    كانت ملاحظاته دقيقة للغاية، حيث قدر قيمة الانزياح بمقدار درجة واحدة كل 66 سنة، وهي قيمة قريبة من القيمة الحقيقية (درجة كل 72 سنة تقريباً).
+                </p>
+                
+                <h3 class="subsection-title">المراصد الفلكية وأدوات الرصد</h3>
+                <p class="content-paragraph">
+                    ساهم ثابت بن قرة في تطوير أدوات الرصد الفلكي وتحسين دقتها. 
+                    عمل على تطوير الأسطرلاب، وهي أداة فلكية معقدة تستخدم لرصد النجوم وتحديد المواقع.
+                </p>
+                <p class="content-paragraph">
+                    كما شارك في إنشاء وتطوير المراصد الفلكية في بغداد، حيث كانت تجري عمليات رصد منهجية ودقيقة للأجرام السماوية. 
+                    هذه المراصد كانت مزودة بأدوات متطورة لعصرها، مما سمح بجمع بيانات فلكية دقيقة.
+                </p>
+                
+                <h3 class="subsection-title">النظرية الكوكبية وتصحيح نموذج بطليموس</h3>
+                <p class="content-paragraph">
+                    أحد أهم إسهامات ثابت بن قرة في الفلك هو نقده وتصحيحه لنموذج بطليموس لحركة الكواكب. 
+                    بين ثابت أن النموذج البطلمي (الذي يفترض حركة الكواكب في أفلاك دائرية) لا يتوافق تماماً مع الملاحظات الفلكية.
+                </p>
+                <p class="content-paragraph">
+                    حاول ثابت تطوير نموذج بديل يصف حركة الكواكب بدقة أكبر، مهداً الطريق للتطورات اللاحقة في النماذج الكوكبية. 
+                    كانت ملاحظاته حول عدم انتظام حركة الكواكب خطوة مهمة نحو تطوير نموذج كوبرنيكوس فيما بعد.
+                </p>
+                
+                <h3 class="subsection-title">الأثر العلمي لأعماله الفلكية</h3>
+                <p class="content-paragraph">
+                    كان لأعمال ثابت بن قرة الفلكية تأثير عميق على تطور علم الفلك:
+                </p>
+                <ul>
+                    <li><strong>في العالم الإسلامي:</strong> أثرت أعماله على الفلكيين المسلمين اللاحقين مثل البيروني وابن الشاطر</li>
+                    <li><strong>في أوروبا:</strong> نقلت أعماله الفلكية إلى أوروبا عبر الترجمة اللاتينية وأثرت على علماء عصر النهضة</li>
+                    <li><strong>تطوير النماذج الكوكبية:</strong> كانت ملاحظاته حول حركة الكواكب خطوة مهمة نحو النموذج الهليوسنتري</li>
+                    <li><strong>تقدم أدوات الرصد:</strong> ساهم في تطوير وتحسين أدوات الرصد الفلكي</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">إرث ثابت بن قرة الفلكي</h3>
+                    <p class="content-paragraph">
+                        يُعد ثابت بن قرة أحد أبرز الفلكيين في العصر الذهبي للحضارة الإسلامية. 
+                        جمع بين المهارة في الرصد والدقة في التحليل الرياضي، مما سمح له بتقديم إسهامات رائدة في فهم حركة الأجرام السماوية. 
+                        كانت أعماله الفلكية جسراً بين الفلك اليوناني القديم والفلك الحديث، وساهمت في تقدم المعرفة الفلكية عبر القرون.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الهندسة والميكانيكا -->
+        <section id="mechanics" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">الهندسة والميكانيكا</h2>
+                
+                <h3 class="subsection-title">النماذج الميكانيكية والآلات</h3>
+                <p class="content-paragraph">
+                    امتدت إسهامات ثابت بن قرة إلى مجال الميكانيكا والهندسة التطبيقية. 
+                    درس النماذج الميكانيكية للعلماء اليونانيين مثل أرخميدس وهيرون الإسكندري، وقام بتطويرها وتحسينها.
+                </p>
+                <p class="content-paragraph">
+                    من أهم إسهاماته في هذا المجال:
+                </p>
+                <ul>
+                    <li><strong>الروافع والرافعات:</strong> طور نظريات حول الروافع وطُرق حساب قواها</li>
+                    <li><strong>الساعات الميكانيكية:</strong> ساهم في تطوير الساعات المائية والميكانيكية</li>
+                    <li><strong>الآلات البسيطة:</strong> درس مبادئ عمل العتلات والبكرات والأسطوانات</li>
+                    <li><strong>الهيدروليكا:</strong> بحث في خصائص السوائل وتطبيقاتها الهندسية</li>
+                </ul>
+                
+                <h3 class="subsection-title">تحليل المباني والهندسة المعمارية</h3>
+                <p class="content-paragraph">
+                    اهتم ثابت بن قرة بتطبيق المبادئ الهندسية في تحليل المباني والهياكل المعمارية. 
+                    درس طرق حساب الأحمال والتوزيع الأمثل للقوى في الهياكل الإنشائية.
+                </p>
+                <p class="content-paragraph">
+                    في كتابه "في القرسطون" (عن الموازين)، ناقش مبادئ التوازن والاستقرار في الهياكل المعمارية. 
+                    قدم تحليلات رياضية للهياكل المعقدة، وساهم في تطوير مبادئ الهندسة الإنشائية.
+                </p>
+                
+                <h3 class="subsection-title">المبادئ الهندسية وتطبيقاتها العملية</h3>
+                <p class="content-paragraph">
+                    جمع ثابت بن قرة بين النظرية والتطبيق في دراساته الهندسية. 
+                    اهتم بتطبيق المبادئ الرياضية في حل المشكلات الهندسية العملية، مثل:
+                </p>
+                <ul>
+                    <li><strong>حساب المساحات والأحجام:</strong> تطوير طرق لحساب مساحات وأحجام الأشكال المعقدة</li>
+                    <li><strong>تخطيط المدن:</strong> تطبيق المبادئ الهندسية في تخطيط المدن والمرافق</li>
+                    <li><strong>هندسة الري:</strong> دراسة أنظمة الري وتصميم القنوات المائية</li>
+                    <li><strong>البناء والإنشاء:</strong> تطبيق مبادئ الميكانيكا في تصميم المباني والجسور</li>
+                </ul>
+                
+                <h3 class="subsection-title">الترجمة والتطوير للنصوص الميكانيكية اليونانية</h3>
+                <p class="content-paragraph">
+                    قام ثابت بن قرة بترجمة العديد من النصوص اليونانية في الميكانيكا والهندسة التطبيقية، 
+                    مع إضافة تعليقات وتحسينات تعكس فهمه العميق لهذه الموضوعات. 
+                    من أهم الترجمات التي أنجزها في هذا المجال أعمال أرخميدس الميكانيكية.
+                </p>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">أهمية أعماله الهندسية والميكانيكية</h3>
+                    <p class="content-paragraph">
+                        تكمن أهمية إسهامات ثابت بن قرة في الهندسة والميكانيكا في أنها جمعت بين الدقة الرياضية والتطبيق العملي. 
+                        لم يكن مجرد منظر، بل حاول دائماً ربط النظريات الرياضية بالمشكلات الهندسية الواقعية. 
+                        ساهمت أعماله في تأسيس تقاليد علمية جمعت بين الرياضيات المجردة والهندسة التطبيقية، 
+                        وهي تقاليد استمرت في الحضارة الإسلامية وانتقلت منها إلى أوروبا.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المنهج العلمي -->
+        <section id="methodology" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">المنهج العلمي</h2>
+                
+                <h3 class="subsection-title">التحليل المنهجي عند ثابت بن قرة</h3>
+                <p class="content-paragraph">
+                    تميز ثابت بن قرة بمنهجية علمية دقيقة تجمع بين عدة عناصر أساسية:
+                </p>
+                <ul>
+                    <li><strong>الاستقراء والاستنباط:</strong> جمع بين الملاحظة الاستقرائية والاستدلال الاستنباطي</li>
+                    <li><strong>الدقة الرياضية:</strong> اعتبر الرياضيات اللغة الأساسية للتعبير عن القوانين العلمية</li>
+                    <li><strong>النقد والتحليل:</strong> لم يقبل النظريات العلمية دون تمحيص ونقد</li>
+                    <li><strong>الربط بين النظرية والتطبيق:</strong> اهتم بتطبيق النظريات على مشكلات واقعية</li>
+                </ul>
+                
+                <h3 class="subsection-title">التطبيق العملي للمنهج العلمي</h3>
+                <p class="content-paragraph">
+                    طبق ثابت بن قرة منهجيته العلمية في جميع مجالات بحثه:
+                </p>
+                <ul>
+                    <li><strong>في الرياضيات:</strong> بدأ من المسلمات الواضحة وبنى عليها براهين منطقية صارمة</li>
+                    <li><strong>في الفلك:</strong> جمع بين الرصد الدقيق والتحليل الرياضي لنمذجة حركة الأجرام السماوية</li>
+                    <li><strong>في الترجمة:</strong> لم يكتف بالنقل الحرفي، بل نقح وصحح وأضاف على النصوص المترجمة</li>
+                    <li><strong>في الهندسة:</strong> ربط بين النظريات المجردة والتطبيقات العملية</li>
+                </ul>
+                
+                <h3 class="subsection-title">الابتكار العلمي وطرق التفكير</h3>
+                <p class="content-paragraph">
+                    طور ثابت بن قرة طرق تفكير علمية مكنته من الابتكار في مجالات متعددة:
+                </p>
+                <ul>
+                    <li><strong>التفكير التحليلي:</strong> تفكيك المشكلات المعقدة إلى عناصر أبسط</li>
+                    <li><strong>التفكير التركيبي:</strong> جمع العناصر المنفصلة في نظريات شاملة</li>
+                    <li><strong>التفكير النقدي:</strong> فحص الفرضيات والنظيات بمنظور نقدي</li>
+                    <li><strong>التفكير التطبيقي:</strong> البحث دائماً عن التطبيقات العملية للنظريات</li>
+                </ul>
+                
+                <h3 class="subsection-title">المنهجية في البحث العلمي</h3>
+                <p class="content-paragraph">
+                    يمكن تلخيص منهجية ثابت بن قرة في البحث العلمي في الخطوات التالية:
+                </p>
+                <ol>
+                    <li><strong>الملاحظة الدقيقة:</strong> جمع البيانات والمشاهدات بدقة</li>
+                    <li><strong>التحليل الرياضي:</strong> تحويل المشاهدات إلى نماذج رياضية</li>
+                    <li><strong>الاستدلال المنطقي:</strong> استخلاص النتائج من المقدمات باستخدام المنطق</li>
+                    <li><strong>التحقق والتجريب:</strong> اختبار النتائج بالتطبيق العملي</li>
+                    <li><strong>التصحيح والتطوير:</strong> تعديل النظريات بناءً على النتائج الجديدة</li>
+                </ol>
+                
+                <h3 class="subsection-title">أثر منهجيته على تطور العلم</h3>
+                <p class="content-paragraph">
+                    كان لمنهجية ثابت بن قرة العلمية تأثير كبير على تطور المنهج العلمي:
+                </p>
+                <ul>
+                    <li><strong>في الحضارة الإسلامية:</strong> أسس تقاليد منهجية اتبعها العلماء المسلمون اللاحقون</li>
+                    <li><strong>الانتقال إلى أوروبا:</strong> نقلت منهجيته عبر ترجمات أعماله وأثرت على علماء عصر النهضة</li>
+                    <li><strong>تطوير المنهج العلمي الحديث:</strong> كانت أعماله خطوة مهمة نحو تطوير المنهج العلمي التجريبي</li>
+                    <li><strong>الجمع بين التخصصات:</strong> قدم نموذجاً للعالم الموسوعي الذي يجمع بين تخصصات متعددة</li>
+                </ul>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">خلاصة المنهجية العلمية لثابت بن قرة</h3>
+                    <p class="content-paragraph">
+                        يمثل ثابت بن قرة نموذجاً فريداً للعالم الذي جمع بين العمق في التخصص والاتساع في المعرفة. 
+                        تميز منهجه العلمي بالدقة الرياضية، والنقد البناء، والربط الوثيق بين النظرية والتطبيق. 
+                        ساهمت منهجيته في تقدم المعرفة العلمية في عصره، وأثرت على تطور المنهج العلمي في الحضارتين الإسلامية والأوروبية. 
+                        يظل ثابت بن قرة مصدر إلهام للباحثين والعلماء الذين يسعون إلى الجمع بين التخصص الدقيق والرؤية الشاملة.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المشروع -->
+        <section id="project" class="page-section">
+            <div class="glass-card">
+                <h2 class="section-title">المشروع</h2>
+                
+                <h3 class="subsection-title">معلومات عن إعداد المشروع</h3>
+                <p class="content-paragraph">
+                    تم إعداد هذا الموقع التفاعلي كجزء من مشروع مادة اللغة العربية، بهدف تقديم شخصية علمية بارزة من العصر العباسي 
+                    بطريقة عصرية تجمع بين الأصالة العلمية والتصميم الحديث. يعكس المشروع روح الابتكار التي تميز بها ثابت بن قرة 
+                    نفسه، حيث يطبق مفاهيم التصميم الحديثة لعرض التراث العلمي العربي الإسلامي.
+                </p>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">فريق العمل</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; text-align: center;">
+                            <h4 style="color: var(--accent-color); margin-bottom: 10px;">إشراف وتوجيه</h4>
+                            <p style="font-size: 1.1rem;">الأستاذ: عبد الحميد لعوبي </p>
+                            <p style="color: #b0b0b0; font-size: 0.9rem;">مادة اللغة العربية</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; text-align: center;">
+                            <h4 style="color: var(--accent-color); margin-bottom: 10px;">تصميم وتطوير الموقع</h4>
+                            <p style="font-size: 1.1rem;">نجم الدين نجار</p>
+                            <p style="color: #b0b0b0; font-size: 0.9rem;">المصمم والمطور الرئيسي</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="color: var(--accent-color); margin: 25px 0 15px; text-align: center;">فريق المشاركين</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; text-align: center;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                            <p style="font-size: 1rem;">مالك إسلام</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                            <p style="font-size: 1rem;">يونس براشد</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                            <p style="font-size: 1rem;">بن قريش عبد الجليل</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                            <p style="font-size: 1rem;">براج أنس</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="subsection-title">اللغات والتقنيات المستخدمة</h3>
+                <p class="content-paragraph">
+                    تم بناء هذا الموقع باستخدام التقنيات الحديثة لتطوير الويب، مع الالتزام بمعايير التصميم المتجاوب والتفاعلية:
+                </p>
+                <ul>
+                    <li><strong>HTML5:</strong> لبناء هيكل الموقع والمحتوى</li>
+                    <li><strong>CSS3:</strong> لتصميم واجهة المستخدم باستخدام تقنيات متقدمة مثل Glassmorphism وFlexbox وGrid</li>
+                    <li><strong>JavaScript:</strong> لإضافة التفاعلية وتحويل الموقع إلى تطبيق صفحة واحدة (SPA)</li>
+                    <li><strong>Font Awesome:</strong> للأيقونات الحديثة</li>
+                    <li><strong>Google Fonts:</strong> للخطوط العربية المميزة</li>
+                </ul>
+                
+                <h3 class="subsection-title">مميزات التصميم</h3>
+                <p class="content-paragraph">
+                    يتميز الموقع بالعديد من الخصائص التقنية والتصميمية:
+                </p>
+                <ul>
+                    <li><strong>تصميم متجاوب:</strong> يعمل على جميع الأجهزة من الهواتف إلى أجهزة الكمبيوتر</li>
+                    <li><strong>واجهة حديثة:</strong> استخدام تقنية Glassmorphism مع تأثيرات الشفافية</li>
+                    <li><strong>تطبيق صفحة واحدة (SPA):</strong> الانتقال بين الصفحات دون إعادة تحميل</li>
+                    <li><strong>قائمة هامبرغر تفاعلية:</strong> للتنقل السلس على الأجهزة المحمولة</li>
+                    <li><strong>مؤشر صفحات ثابت:</strong> لتسهيل التنقل بين الأقسام</li>
+                    <li><strong>تأثيرات بصرية ناعمة:</strong> انتقالات متدرجة وظلال ناعمة</li>
+                </ul>
+                
+                <h3 class="subsection-title">هدف المشروع التعليمي</h3>
+                <p class="content-paragraph">
+                    يهدف هذا المشروع إلى تحقيق عدة أهداف تعليمية وتربوية:
+                </p>
+                <ul>
+                    <li><strong>تعريف الطلاب:</strong> بشخصيات علمية بارزة من التراث العربي الإسلامي</li>
+                    <li><strong>ربط الماضي بالحاضر:</strong> استخدام التقنيات الحديثة لعرض التراث العلمي</li>
+                    <li><strong>تنمية المهارات:</strong> تطوير مهارات البحث والتصميم والتطوير لدى الطلاب</li>
+                    <li><strong>تشجيع العمل الجماعي:</strong> تعزيز روح الفريق والتعاون بين المشاركين</li>
+                    <li><strong>ربط اللغة العربية بالعلوم:</strong> إظهار دور اللغة العربية كلغة للعلم والمعرفة</li>
+                </ul>
+                
+                <h3 class="subsection-title">المنهجية المتبقية في إعداد المشروع</h3>
+                <p class="content-paragraph">
+                    اتبع فريق العمل منهجية علمية في إعداد المشروع:
+                </p>
+                <ol>
+                    <li><strong>مرحلة البحث:</strong> جمع المعلومات والمراجع عن ثابت بن قرة</li>
+                    <li><strong>مرحلة التصميم:</strong> وضع الهيكل العام للموقع وتصميم الواجهة</li>
+                    <li><strong>مرحلة التطوير:</strong> كتابة الأكواد البرمجية وتنفيذ التصميم</li>
+                    <li><strong>مرحلة الاختبار:</strong> تجربة الموقع على مختلف الأجهزة والمتصفحات</li>
+                    <li><strong>مرحلة المراجعة:</strong> مراجعة المحتوى والتصميم تحت إشراف الأستاذ</li>
+                </ol>
+                
+                <div class="highlight">
+                    <h3 class="subsection-title">رسالة المشروع</h3>
+                    <p class="content-paragraph">
+                        نحن فريق العمل نؤمن بأن التراث العلمي العربي الإسلامي ثروة معرفية تحتاج إلى عرضها بأسلوب عصري 
+                        يليق بعظمتها. يمثل ثابت بن قرة نموذجاً للعالم الموسوعي الذي جمع بين تخصصات متعددة، 
+                        ونحن نسعى من خلال هذا المشروع إلى تقديم نموذج يحتذى به للطلاب والعلماء، 
+                        مع التأكيد على أهمية الابتكار والتفكير العلمي المنهجي.
+                    </p>
+                    <p class="content-paragraph" style="text-align: center; margin-top: 20px; font-style: italic;">
+                        "العلم لا وطن له، والمعرفة إرث إنساني مشترك، وواجبنا كطلاب علم أن نحفظ هذا الإرث 
+                        ونطوره ونجعله في متناول الأجيال القادمة بأفضل صورة ممكنة"
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- كود JavaScript -->
+    <script>
+        // تفعيل الموقع التفاعلي
+        document.addEventListener('DOMContentLoaded', function() {
+            // عناصر الموقع
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const pageSections = document.querySelectorAll('.page-section');
+            const linkCards = document.querySelectorAll('.link-card');
+            const backToTop = document.getElementById('backToTop');
+            const indicatorDots = document.querySelectorAll('.indicator-dot');
+            
+            let isMenuOpen = false;
+            
+            // فتح/إغلاق القائمة
+            hamburgerMenu.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                sideMenu.classList.toggle('active');
+                
+                // تحويل الهامبرغر إلى X
+                const spans = this.querySelectorAll('span');
+                if (isMenuOpen) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // إغلاق القائمة عند النقر خارجها
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && isMenuOpen && 
+                    !sideMenu.contains(event.target) && 
+                    !hamburgerMenu.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+            
+            // وظيفة إغلاق القائمة
+            function closeMenu() {
+                isMenuOpen = false;
+                sideMenu.classList.remove('active');
+                const spans = hamburgerMenu.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+            
+            // تبديل الصفحات عند النقر على روابط القائمة
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-section');
+                    showSection(targetId);
+                    
+                    // تحديث حالة العناصر النشطة
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // إغلاق القائمة على الهواتف
+                    if (window.innerWidth <= 768) {
+                        closeMenu();
+                    }
+                });
+            });
+            
+            // تبديل الصفحات عند النقر على كروت الروابط
+            linkCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = this.getAttribute('data-section');
+                    showSection(targetSection);
+                    
+                    // تحديث القائمة
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove('active');
+                        if (menuItem.getAttribute('data-section') === targetSection) {
+                            menuItem.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // النقر على مؤشرات الصفحات
+            indicatorDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                    
+                    // تحديث القائمة
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove('active');
+                        if (menuItem.getAttribute('data-section') === targetId) {
+                            menuItem.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // وظيفة عرض القسم المحدد
+            function showSection(sectionId) {
+                // إخفاء جميع الأقسام
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // إظهار القسم المطلوب
+                document.getElementById(sectionId).classList.add('active');
+                
+                // التمرير لأعلى الصفحة
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // تحديث المؤشرات
+                indicatorDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-target') === sectionId) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+            
+            // زر العودة للأعلى
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // إغلاق القائمة عند تغيير حجم النافذة
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && isMenuOpen) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
